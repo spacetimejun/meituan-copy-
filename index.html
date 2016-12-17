@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>美团手机端首页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="../build/css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../build/css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_eb2wideilb359udi.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="../build/css/iconfont.css"/>-->
+	</head>
+	<body ng-app='myApp'>
+	
+	<!--angularjs 引进头部-->
+	<div ng-controller='header'>
+		<div ng-include='"header.html"'>
+			
+		</div>
+	</div>
+	
+	<!--第二栏图标导航栏，使用swiper插件-->
+		<!-- Swiper -->
+    <div class="swiper-container" ng-controller='second'>
+        <div class="swiper-wrapper">
+        	<!--第一屏-->
+            <div class="swiper-slide first">
+            	<!--第一屏第一排-->
+            	<div class="pageList1">
+            		<div ng-repeat='item in data1'>
+            			
+            			<i class='iconfont' style='background:{{item.bg}}' ng-class='item.icon'></i>
+            			<span>{{item.title}}</span>
+            		</div>
+            	</div>
+            	<!--第一屏第二排-->
+            	<div class="pageList2">
+            		<div ng-repeat='item in data2'>
+            			
+            			<i class='iconfont' style='background:{{item.bg}}' ng-class='item.icon'></i>
+            			<span>{{item.title}}</span>
+            		</div>
+            	</div>
+            	<div class="mask">
+            		
+            	</div>
+            </div>
+            <div class="swiper-slide second">
+            	<!--第2屏第一排-->
+            	<div class="pageList1">
+            		<div ng-repeat='item in data3'>
+            			
+            			<i class='iconfont' style='background:{{item.bg}}' ng-class='item.icon'></i>
+            			<span>{{item.title}}</span>
+            		</div>
+            	</div>
+            	<!--第2屏第二排-->
+            	<div class="pageList2">
+            		<div ng-repeat='item in data4'>
+            			
+            			<i class='iconfont' style='background:{{item.bg}}' ng-class='item.icon'></i>
+            			<span>{{item.title}}</span>
+            		</div>
+            	</div>
+            	<div class="mask">
+            		
+            	</div>
+            </div>
+            
+        </div>
+         <div class="swiper-pagination"></div>
+    </div>
+    
+    <!--第三栏-->
+    <div class="daogou">
+    	<div class="left">
+    		<a href="###">
+    			<div class="playbox">
+	    			<h3>我们约吧</h3>
+	    			<p>恋人家人好朋友</p>
+	    			<img src="img/play.png"/>
+    			</div>
+    			
+    		</a>
+    	</div>
+    	<div class="right">
+    		<div class="top">
+    			<a href="###">
+    				<div class="eatbox">
+    					<span>
+		    				<p>低价超值</p>
+		    				<p>十元惠生活</p>
+    					</span>
+	    				<img src="img/hanbage.jpg"/>
+    				</div>
+    				
+    			</a>
+    		</div>
+    		<div class="bottom">
+    			<div class="bottomLeft">
+    				<a href="###">
+    					<div class="cakebox">
+    						<p>午后时光</p>
+    						<p>懒懒下午茶</p>
+    						<img src="img/cake.png"/>
+    					</div>
+    				</a>
+    			</div>
+    			<div class="bottomRight">
+    				<a href="###">
+    					<div class="timebox">
+    						<h3>名店抢购</h3>
+    						<p>距离结束</p>
+    						<span id="timer">
+    							<span class="hour"></span>:
+    							<span class="minute"></span>:
+    							<span class="seconds"></span>
+    						</span>
+    					</div>
+    				</a>
+    			</div>
+    			
+    			
+    		</div>
+    	</div>
+    </div>
+    
+ 	<!--第四栏-->
+ 	<!--使用angular加载数据-->
+ 	<!--原生代码-->
+ 	<!--<div class="goods" ng-controller='goods'>
+ 		<h3>猜你喜欢</h3>
+ 		<div id="datalist"></div>
+		<div id="loading"><img src="img/loading.gif"></div>
+		<p class='more'><a href="###">查看更多团购</a></p>
+ 	</div>-->
+    <!--angular代码-->
+    <div class="goods" ng-controller='goods'>
+ 		
+		<h3>猜你喜欢</h3>
+		<!--infinite-scroll:是主要加载数据用的，也就是说，当你下拉到底部的时候就会触发这个方法去加载数据。-->
+		<!--infinite-scroll-disabled:这个值默认是false(Boolean类型), 默认关闭 “停止滚动” 这个功能.-->
+		<!--infinite-scroll-distance:这个值意思大致就是间隔多少页，比如说：如果该值为“0”的话，那么，当页面滚动到底部的时候才开始去加载数据。-->
+ 		<div id="datalist"  infinite-scroll='reddit.nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='0'> 
+ 			<ul>
+ 				<li ng-repeat='item in reddit.items'>
+ 					<div class="p-img">
+ 						<a href="">
+ 							<img src="img/hanbage.jpg"/>
+ 						</a>
+ 					</div>
+ 					<div class="p-right">
+ 						<div class="p-name">
+ 							<a href="">{{item.subject}}</a>
+ 						</div>
+ 						<div class="p-price">
+ 							<b>{{item.tid | currency:'&yen;'}}</b>
+ 						</div>
+ 					</div>
+ 					
+ 					
+ 				</li>
+ 				
+ 			</ul>
+ 		</div>
+		<div id="loading" ng-show='true'><img src="img/loading.gif"></div>
+		<p class='more' ng-click='more'><a href="###">查看更多团购</a></p>
+ 		
+ 	</div>
+    
+    
+    
+    
+    <!--第五栏底部-->
+    <footer>
+    	<div class="top">
+    		<span class="first">
+	    		<button><a href="###">登陆</a></button>
+	    		<button><a href="###">注册</a></button>
+    		</span>
+    		<span class="last">
+    			城市：<button>深圳</button>
+    		</span>
+    	</div>
+    	<div class="center">
+    		<ul>
+    			<li><a href="###">首页</a></li>
+    			<li><a href="###">订单</a></li>
+    			<li><a href="###">美团下载</a></li>
+    			<li><a href="###">电脑版</a></li>
+    			<li><a href="###">帮助</a></li>
+    		</ul>
+    		
+    	</div>
+    	<div class="bottom">
+    		<p>友情链接：<a href="###">猫眼电影</a></p>
+	    	<p><span>©2016 美团网 京ICP证070791号</span></p>
+	    	
+    	</div>
+    	
+    	
+    </footer>
+    
+   <script src="../build/js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+   <script src="../build/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+   <script src="../build/js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+   <script src="../build/js/main.js" type="text/javascript" charset="utf-8"></script>
+  	<script src="../build/js/ng-infinite-scroll.min.js" type="text/javascript" charset="utf-8"></script>
+   
+	</body>
+	<script type="text/javascript">
+//		var app = angular.module('myApp',[]);
+//		app.controller('header',function($scope){
+//			
+//		})
+//		
+		
+		
+	</script>
+</html>

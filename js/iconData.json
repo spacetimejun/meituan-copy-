@@ -1,0 +1,124 @@
+[
+	        {
+	          	"id":1,
+	          	"result": [
+	          		{
+	          			"bg": "#fd9d21",
+	          			"icon": "icon-meishi",
+	          			"title": "美食"
+	          		},
+	          		{
+	          			"bg": "#ff6767",
+	          			"icon": "icon-dianying",
+	          			"title": "电影"
+	          		},
+	          		{
+	          			"bg": "#8a90fa",
+	          			"icon": "icon-jiudian",
+	          			"title": "酒店"
+	          		},
+	          		{
+	          			"bg": "#fed030",
+	          			"icon": "icon-xiuxianyule",
+	          			"title": "休闲娱乐"
+	          		},
+	          		{
+	          			"bg": "#fd9d21",
+	          			"icon": "icon-waimai",
+	          			"title": "外卖"
+	          		}
+	          	]
+	        },
+	        
+	        {
+	          	"id":2,
+	          	"result": [
+	          		{
+	          			"bg": "#fed030",
+	          			"icon": "icon-ktv",
+	          			"title": "KTV"
+	          		},
+	          		{
+	          			"bg": "#4dc6ee",
+	          			"icon": "icon-zhoubianyou",
+	          			"title": "周边游"
+	          		},
+	          		{
+	          			"bg": "#ff80c2",
+	          			"icon": "icon-liren",
+	          			"title": "丽人"
+	          		},
+	          		{
+	          			"bg": "#fd9d21",
+	          			"icon": "icon-xiaochikuaican",
+	          			"title": "小吃快餐"
+	          		},
+	          		{
+	          			"bg": "#599eec",
+	          			"icon": "icon-huochepiao",
+	          			"title": "机票/火车票"
+	          		}
+	          	]
+	        },
+	        {
+	          	"id":3,
+	          	"result": [
+	          		{
+	          			"bg": "#A8DD99",
+	          			"icon": "icon-shenghuofuwu",
+	          			"title": "生活服务"
+	          		},
+	          		{
+	          			"bg": "#00d3be",
+	          			"icon": "icon-jinrixindan",
+	          			"title": "今日新单"
+	          		},
+	          		{
+	          			"bg": "#fed030",
+	          			"icon": "icon-zuliao",
+	          			"title": "足疗按摩"
+	          		},
+	          		{
+	          			"bg": "#fd9d21",
+	          			"icon": "icon-tianpin14",
+	          			"title": "甜点饮品"
+	          		},
+	          		{
+	          			"bg": "#FF7360",
+	          			"icon": "icon-sheying",
+	          			"title": "婚纱摄影"
+	          		}
+	          	]
+	        },
+	        {
+	          	"id":4,
+	          	"result": [
+	          		{
+	          			"bg": "#ff80c2",
+	          			"icon": "icon-muyingqinzi",
+	          			"title": "母婴亲子"
+	          		},
+	          		{
+	          			"bg": "#84d23d",
+	          			"icon": "icon-xuexipeixun",
+	          			"title": "学习培训"
+	          		},
+	          		{
+	          			"bg": "#ff80c2",
+	          			"icon": "icon-ring",
+	          			"title": "结婚"
+	          		},
+	          		{
+	          			"bg": "#599eec",
+	          			"icon": "icon-jiazhuang",
+	          			"title": "家装"
+	          		},
+	          		{
+	          			"bg": "#00d3be",
+	          			"icon": "icon-dian",
+	          			"title": "全部分类"
+	          		}
+	          	]
+	        }
+	       
+    	]
